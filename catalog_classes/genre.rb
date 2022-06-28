@@ -1,7 +1,7 @@
 require './item'
 
 class Genre < Item
-  attr_accessor :name, :items
+  attr_accessor :name
   attr_reader :item
 
   def initialize(name)
@@ -10,7 +10,8 @@ class Genre < Item
     @item = []
   end
 
-  def add_item(enre, author, source, label, publish_date)
-    Item.new(genre, author, source, label, publish_date, self)
+  def add_item(genre, author, source, label, publish_date)
+    @item = item
+    item.genre.push(self) unless item.genre.include?(self)
   end
 end
