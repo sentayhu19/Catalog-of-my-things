@@ -1,1 +1,1 @@
-require ''
+require './catalog_classes/item'
