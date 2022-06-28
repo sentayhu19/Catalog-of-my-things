@@ -19,7 +19,7 @@ def menu
   puts '13 - Exit'
 end
 
-def main 
+def main
   menu
   option = gets.chomp.to_i
   select_option(option)
@@ -29,7 +29,7 @@ def select_option(option)
   case option
   when 1..12
     puts 'On construction'
-    print "\e[2J\e[f" 
+    print "\e[2J\e[f"
     main
   when 13
     puts 'Goodbye see you again'
