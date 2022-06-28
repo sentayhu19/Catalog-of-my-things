@@ -10,7 +10,7 @@ class Genre < Item
     @item = []
   end
 
-  def add_item(genre, author, source, label, publish_date)
+  def add_item(_genre, _author, _source, _label, _publish_date)
     @item = item
     item.genre.push(self) unless item.genre.include?(self)
   end
