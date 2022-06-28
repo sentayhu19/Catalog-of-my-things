@@ -14,4 +14,10 @@ class Genre < Item
     @item = item
     item.genre.push(self) unless item.genre.include?(self)
   end
+
+  def list_all_genre
+    @genre.each_with_index do |x, index|
+      puts "#{index}) [#{x.class.name}] Name: #{x.name}, ID: #{x.id}"
+    end
+  end
 end

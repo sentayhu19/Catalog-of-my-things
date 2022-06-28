@@ -15,4 +15,10 @@ class MusicAlbum < Item
       false
     end
   end
+
+  def list_all_music_albums
+    @music_album.each_with_index do |x, index|
+      puts "#{index}) [#{x.class.name}] On_spotify: #{x.true}"
+    end
+  end
 end
