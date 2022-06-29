@@ -2,8 +2,9 @@ class Item
   attr_accessor :genre, :author, :source, :label, :publish_date, :archived
 
   def initialize(genre, author, source, label, publish_date)
-    @id = Random.new.rand(1..100)
+    @id = Random.new.rand(1..1000)
     @genre = genre
+    genre.items.push(self) unless genre.items.include?(self)
     @author = author
     @source = source
     @label = label

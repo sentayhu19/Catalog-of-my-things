@@ -1,24 +1,18 @@
-require './item'
+require_realtive 'item'
 
 class MusicAlbum < Item
-  attr_accessor :on_spotify
+  attr_accessor :on_spotify, :archived
+  attr_reader :publish_date, :id
 
-  def initialize(on_spotify)
-    super(genre, author, source, label, publish_date)
+  def initialize(publish_date, archived, on_spotify)
+    super(publish_date)
+    @id = Random.rand(1..1000)
+    @archived = archived
     @on_spotify = on_spotify
+    @publish_date = publish_date
   end
 
   def can_be_archived?
-    if (@archived = true && @on_spotify = true)
-      true
-    else
-      false
-    end
-  end
-
-  def list_all_music_albums
-    @music_album.each_with_index do |x, index|
-      puts "#{index}) [#{x.class.name}] On_spotify: #{x.true}"
-    end
+    super && @on_spotify
   end
 end
