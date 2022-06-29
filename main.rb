@@ -36,6 +36,7 @@ def middle
   when 13
     select_option(13)
   else
+    p 'Invalid input'
     main
   end
 end
@@ -45,7 +46,6 @@ def select_option(option)
 
   when (3 || 8)..9
     @my_app.redirection(option)
-    print "\e[2J\e[f"
     middle
   when 10..12
     puts 'On construction'
