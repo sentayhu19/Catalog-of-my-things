@@ -1,6 +1,8 @@
 require './app'
+require './json/save_movie'
 
 @my_app = App.new
+@savejson = Manipulation.new
 
 def menu
   puts 'WELCOME TO CATALOG OF THINGS'
@@ -53,6 +55,8 @@ def select_option(option)
     main
   when 13
     puts 'Goodbye see you again'
+    @savejson.save_data(@my_app.movies, 'movies.json')
+    @savejson.save_data(@my_app.sources, 'sources.json')
     exit(true)
   else
     puts 'Choose a correct option'
