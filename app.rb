@@ -9,7 +9,7 @@ class App
   end
 
   def add_movie
-    print "Enter source: "
+    print 'Enter source: '
     input = gets.chomp
     source = Source.new(input)
     @sources << source unless @sources.include?(source)
@@ -28,11 +28,13 @@ class App
   end
 
   def list_all_sources
-    @sources.map { |source| p "ID: #{source.id} Name: #{source.name}"}
+    @sources.map { |source| p "ID: #{source.id} Name: #{source.name}" }
   end
 
   def list_all_movies
-    @movies.map { |movie| p "ID: #{movie.id} Author: #{movie.author} Label: #{movie.label} Publish date: #{movie.publish_date}"}
+    @movies.map do |movie|
+      p "ID: #{movie.id} Author: #{movie.author} Label: #{movie.label} Publish date: #{movie.publish_date}"
+    end
   end
 
   def redirection(option)
@@ -43,9 +45,8 @@ class App
       list_all_sources
     when 9
       add_movie
-    else 
+    else
       p 'Invalid input'
     end
   end
 end
-

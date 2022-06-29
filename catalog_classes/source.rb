@@ -1,4 +1,4 @@
-class Source 
+class Source
   attr_accessor :name
   attr_reader :id, :items
 
@@ -10,6 +10,6 @@ class Source
 
   def add_item(item)
     @items << (item)
-    item.source = self 
+    item.source = self
   end
 end

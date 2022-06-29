@@ -35,16 +35,17 @@ def middle
     main
   when 13
     select_option(13)
-  else 
-    puts 'Please choose a correct option'
+  else
+    main
   end
 end
 
 def select_option(option)
   case option
 
-  when 3 || 8..9
+  when (3 || 8)..9
     @my_app.redirection(option)
+    print "\e[2J\e[f"
     middle
   when 10..12
     puts 'On construction'
