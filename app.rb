@@ -1,7 +1,7 @@
 require './catalog_classes/movie'
 require './catalog_classes/item'
 require './catalog_classes/source'
-require './json/save_movie'
+require './json/json_manipulation'
 
 class App
   attr_reader :movies, :sources

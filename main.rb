@@ -1,5 +1,5 @@
 require './app'
-require './json/save_movie'
+require './json/json_manipulation'
 
 @my_app = App.new
 @savejson = Manipulation.new
