@@ -1,13 +1,13 @@
-require './catalog_classes/item'
+require_relative 'item'
 
 class Movie < Item
-  attr_accessor :silet
-  def initialize(author, source, labal, publish_date, silet)
-    super('movie', author, source, labal, publish_date)
-    @silet = silet
+  attr_accessor :silent
+  def initialize(author, source, label, publish_date, silent = false)
+    super('movie', author, source, label, publish_date)
+    @silent = silent
   end
 
   def can_be_archived?
-    @silet || super
+    @silent || super
   end
 end
