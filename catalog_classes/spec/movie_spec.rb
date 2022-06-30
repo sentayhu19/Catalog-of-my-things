@@ -4,8 +4,8 @@ describe Movie do
   before do
     source = double('Source')
     items = []
-    allow(source).to receive(:name) {'From a friend'}
-    allow(source).to receive(:items) {items}
+    allow(source).to receive(:name) { 'From a friend' }
+    allow(source).to receive(:items) { items }
     @movie = Movie.new 'Daniel', source, 'LABEL', '12/11/2010', false
   end
 
