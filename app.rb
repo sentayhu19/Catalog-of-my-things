@@ -1,6 +1,17 @@
-require_relative 'catalog_classes/item'
-require_relative 'catalog_classes/genre'
+class App
+  attr_reader :genres, :authors, :labels, :books, :musics, :games
 
-gender = Genre.new('Movie')
-items1 = Item.new(gender, 'Mielw', 'betaward', 'YMCMB', 2)
-gender.add_item(items1)
+  def create_music(music)
+    @musics << music
+  end
+
+  def add_genre(item)
+    @genres.add_item(item)
+  end
+
+  def list_genres
+    @genres.each_with_index do |genre, index|
+      puts "#{index}. ID: #{genre.id} Name: #{genre.name}"
+    end
+  end
+end

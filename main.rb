@@ -1,4 +1,6 @@
-require './app'
+# require './app'
+require './actions/music_actions'
+@music = MusicActions.new
 
 def menu
   puts 'WELCOME TO CATALOG OF THINGS'
@@ -27,9 +29,12 @@ end
 
 def select_option(option)
   case option
-  when 1..12
+  when 1..9
     puts 'On construction'
     print "\e[2J\e[f"
+    main
+  when 10
+    @music.add_a_music
     main
   when 13
     puts 'Goodbye see you again'
