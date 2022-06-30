@@ -1,3 +1,4 @@
+require 'date'
 class Item
   attr_accessor :genre, :author, :source, :label, :publish_date, :archived
 
@@ -6,7 +7,7 @@ class Item
     @author = author
     @source = source
     @label = label
-    @publish_date = publish_date
+    @publish_date = from_string(publish_date)
     @archived = false
   end
 
@@ -17,4 +18,7 @@ class Item
   def move_to_archive
     @archived = true if can_be_archived
   end
+end
+def from_string(date)
+  Date.parse(date)
 end
