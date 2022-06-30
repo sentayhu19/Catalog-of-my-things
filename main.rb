@@ -1,4 +1,8 @@
 require './app'
+require './json/json_manipulation'
+
+@my_app = App.new
+@savejson = Manipulation.new
 
 def menu
   puts 'WELCOME TO CATALOG OF THINGS'
@@ -25,14 +29,34 @@ def main
   select_option(option)
 end
 
+def middle
+  puts 'Select (0) to goback to the menu or (13) to exit'
+  mid = gets.chomp.to_i
+  case mid
+  when 0
+    main
+  when 13
+    select_option(13)
+  else
+    p 'Invalid input'
+    main
+  end
+end
+
 def select_option(option)
   case option
-  when 1..12
+
+  when (3 || 8)..9
+    @my_app.redirection(option)
+    middle
+  when 10..12
     puts 'On construction'
     print "\e[2J\e[f"
     main
   when 13
     puts 'Goodbye see you again'
+    @savejson.save_data(@my_app.movies, 'movies.json')
+    @savejson.save_data(@my_app.sources, 'sources.json')
     exit(true)
   else
     puts 'Choose a correct option'
