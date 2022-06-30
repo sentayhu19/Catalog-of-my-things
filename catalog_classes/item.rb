@@ -11,17 +11,19 @@ class Item
     @source = source
     source.items << self unless source.items.include?(self)
     @label = label
-    @publish_date = publish_date
+    @publish_date = from_string(publish_date)
     @archived = false
   end
 
   def can_be_archived?
-    published_year = Date.parse(publish_date).year
-    current_year = Time.new.year
-    current_year - published_year > 10
+    (Time.now.year - @publish_date.year) > 10
   end
 
   def move_to_archive
     @archived = true if can_be_archived
   end
+end
+
+def from_string(date)
+  Date.parse(date)
 end
