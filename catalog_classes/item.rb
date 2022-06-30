@@ -19,6 +19,7 @@ class Item
     @archived = true if can_be_archived
   end
 end
+
 def from_string(date)
   Date.parse(date)
 end
