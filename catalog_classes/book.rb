@@ -11,7 +11,8 @@ class Book < Item
   def can_be_archived?
     super || @cover_state == 'bad'
   end
-  def to_json(*data)
+
+  def to_json(*_data)
     {
       id: @id,
       publish_date: @publish_date,
