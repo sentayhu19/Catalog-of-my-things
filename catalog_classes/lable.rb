@@ -13,4 +13,12 @@ class Label
     @items << item unless @items.include?(item)
     item.label = self
   end
+  def to_json(*data)
+    {
+      id: @id,
+      color: @color,
+      title: @title,
+      items: @items.map(&:id)
+    }.to_json
+  end
 end
