@@ -1,0 +1,44 @@
+[
+  {
+    "name": "caucasian chalk circle",
+    "publisher": "netflix",
+    "cover_state": "covered",
+    "publish_date": "2022-01-01"
+  },
+  {
+    "name": "man vs bee",
+    "publisher": "amazon",
+    "cover_state": "hardcover",
+    "publish_date": "2022-06-01"
+  },
+  {
+    "name": "matilda",
+    "publisher": "kindle",
+    "cover_state": "ebook",
+    "publish_date": "2014-01-01"
+  },
+  {
+    "name": "cheap thrills",
+    "publisher": "sia",
+    "cover_state": "softcopy",
+    "publish_date": "2000-12-12"
+  },
+  {
+    "name": "the god's must be crazy",
+    "publisher": "sa",
+    "cover_state": "hardcover",
+    "publish_date": "2012-03-04"
+  },
+  {
+    "name": "Die Hard",
+    "publisher": "Daniel",
+    "cover_state": "Good",
+    "publish_date": "2022-02-20"
+  },
+  {
+    "name": "Tears of the moon",
+    "publisher": "Abhamam",
+    "cover_state": "Good",
+    "publish_date": "2022-10-10"
+  }
+]
