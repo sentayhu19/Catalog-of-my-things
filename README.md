@@ -9,7 +9,7 @@ Catalogs of my things help you to keep a record of different types of things you
 
 
 ## UML
-[Image](./image/catalog_of_my_things.png)
+![](./image/catalog_of_my_things.png)
 
 ### Cloning the project
 
