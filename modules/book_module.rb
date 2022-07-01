@@ -47,17 +47,17 @@ module BooksDataController
 
     new_book = Book.new(name, publisher, cover_state, publish_date)
     save_books(new_book)
-    puts 'Book created successfully'.colorize(color: :light_green)
+    puts 'Book created successfully'
   rescue StandardError
-    puts 'Cannot create book, check your Input formats'.colorize(color: :light_red)
+    puts 'Cannot create book, check your Input formats'
   end
 
   def list_books
     books = load_books
     if books.empty?
-      puts 'No Books to be displayed'.colorize(color: :magenta)
+      puts 'No Books to be displayed'
     else
-      puts "#{books.count} Books Found!".colorize(color: :magenta)
+      puts "#{books.count} Books Found!"
       books.each do |book|
         puts "Name: #{book['name']}" \
              "- Publisher: #{book['publisher']} - Cover State: #{book['cover_state']}" \

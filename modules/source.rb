@@ -32,9 +32,9 @@ module SourceModule
     sources = list_all_sources
 
     if sources.empty?
-      puts 'Woops! There are currently no sources in the list.'.colorize(color: :magenta)
+      puts 'Woops! There are currently no sources in the list.'
     else
-      puts "#{sources.count} Sources Found!".colorize(color: :magenta)
+      puts "#{sources.count} Sources Found!"
       sources.each do |source|
         puts "Title: '#{source.name}"
       end

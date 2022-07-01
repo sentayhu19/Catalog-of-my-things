@@ -50,9 +50,9 @@ module MovieModule
     movies = load_movies
 
     if movies.empty?
-      puts 'Woops! There are currently no movies in the list.'.colorize(color: :magenta)
+      puts 'Woops! There are currently no movies in the list.'
     else
-      puts "#{movies.count} Movies Found!".colorize(color: :magenta)
+      puts "#{movies.count} Movies Found!"
       movies.each do |movie|
         puts "Title: '#{movie['name']}, Published Date: #{movie['publish_date']}, Silent: #{movie['silent']}"
       end

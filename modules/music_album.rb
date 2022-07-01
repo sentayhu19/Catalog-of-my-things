@@ -35,7 +35,7 @@ module MusicAlbumsModule
     music_albums = fetch_music_albums
 
     if music_albums.empty?
-      puts 'No Music Album to be displayed'.colorize(color: :magenta)
+      puts 'No Music Album to be displayed'
     else
       music_albums.each do |album|
         puts "Album's published date : #{album['publish_date']}"
@@ -55,8 +55,9 @@ module MusicAlbumsModule
     music_album = MusicAlbum.new(publish_date, on_spotify)
 
     add_music_album(music_album)
-    puts 'Music Album Added successfully'.colorize(color: :light_green)
+    puts 'Music Album Added successfully'
+    menu_list
   rescue StandardError
-    puts 'Cannot add music album, check your Input format'.colorize(color: :light_red)
+    puts 'Cannot add music album, check your Input format'
   end
 end

@@ -35,9 +35,9 @@ module GameModule
   def list_games
     games = fetch_games
     if games.empty?
-      puts 'No Games to be displayed'.colorize(color: :magenta)
+      puts 'No Games to be displayed'
     else
-      puts "#{games.count} Games Found!".colorize(color: :magenta)
+      puts "#{games.count} Games Found!"
       games.each do |game|
         puts "Players: #{game['multiplayer']}" \
              "-Last Played: #{game['last_played_at']} - Published: #{game['publish_date']}"
@@ -57,8 +57,8 @@ module GameModule
 
     new_game = Game.new(multiplayer, last_played_at, publish_date)
     add_game(new_game)
-    puts 'Game created successfully'.colorize(color: :light_green)
+    puts 'Game created successfully'
   rescue StandardError
-    puts 'Cannot create game, check your Input format'.colorize(color: :light_red)
+    puts 'Cannot create game, check your Input format'
   end
 end
