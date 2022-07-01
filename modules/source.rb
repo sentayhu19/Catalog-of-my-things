@@ -1,5 +1,5 @@
 require 'json'
-require_relative 'menu.rb'
+require_relative 'menu'
 
 module SourceModule
   def add_source(source)

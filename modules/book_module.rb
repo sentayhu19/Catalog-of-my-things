@@ -1,6 +1,6 @@
 require 'json'
 require_relative '../classes/book'
-require_relative 'menu.rb'
+require_relative 'menu'
 
 module BooksDataController
   def load_books
@@ -58,15 +58,14 @@ module BooksDataController
     books = load_books
     if books.empty?
       puts 'No Books to be displayed'
-      puts menu_list
     else
       puts "#{books.count} Books Found!"
       books.each do |book|
-        puts "Name: #{book['name']}" \
-             "- Publisher: #{book['publisher']} - Cover State: #{book['cover_state']}" \
-             "- Published Date: #{book['publish_date']}"
+        puts "Name: #{book['name']}\n" \
+             "Publisher: #{book['publisher']}\nCover State: #{book['cover_state']}\n" \
+             "Published Date: #{book['publish_date']}\n\n"
       end
-      puts menu_list
     end
+    puts menu_list
   end
 end
