@@ -14,4 +14,5 @@ def menu_list
      11 - Add a movie
      12 - Add a game
      13 - Exit'
+  puts 'Options:'
 end
