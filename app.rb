@@ -53,6 +53,7 @@ class App
       add_movie
     else
       p 'Invalid input'
+
     end
   end
 end
