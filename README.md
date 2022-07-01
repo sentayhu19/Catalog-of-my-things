@@ -37,7 +37,7 @@ Setup
 👤 **Matchoudi**
 
 - GitHub: [@githubhandle](https://github.com/LionRouge1)
--- Twitter: [@Matchoudi1](https://twitter.com/Matchoudi1)
+- Twitter: [@Matchoudi1](https://twitter.com/Matchoudi1)
 - LinkedIn: [matchoudi](https://linkedin.com/in/matchoudi)
 
 👤 **Sentayhu Berhanu**
