@@ -33,9 +33,9 @@ module LabelsDataController
     labels = load_labels
 
     if labels.empty?
-      puts 'No Lables to be displayed'.colorize(color: :magenta)
+      puts 'No Lables to be displayed'
     else
-      puts "#{labels.count} Labels Found!".colorize(color: :magenta)
+      puts "#{labels.count} Labels Found!"
       labels.each do |label|
         puts "Title: #{label['title']} - Color: #{label['color']}"
       end

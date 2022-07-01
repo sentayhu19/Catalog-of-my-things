@@ -1,4 +1,3 @@
-require 'colorize'
 require_relative 'modules/game'
 require_relative 'modules/author'
 require_relative 'modules/genre'
@@ -40,12 +39,12 @@ class App
     if input.to_i.between?(1, 13)
       @options[input].call
     else
-      puts 'Invalid Input!'.colorize(color: :red)
+      puts 'Invalid Input!'
     end
   end
 
   def quit_game
-    puts 'Application exited successfully!'.colorize(color: :light_blue)
+    puts 'Application exited successfully!'
     exit(true)
   end
 end
