@@ -1,0 +1,6 @@
+CREATE TABLE game(
+	id INT NOT NULL,
+	last_played_at DATE,
+	multiplayer BOOLEAN,
+	FOREIGN KEY (id) REFERENCES item (id) ON DELETE RESTRICT ON UPDATE CASCADE
+);
