@@ -1,15 +1,17 @@
-class Genre
-  attr_accessor :name, :id
-  attr_reader :item
+require 'securerandom'
 
-  def initialize(name, id: Random.rand(1..1000))
+class Genre
+  attr_accessor :name
+  attr_reader :items
+
+  def initialize(name)
+    @id = SecureRandom.uuid
     @name = name
-    @id = id
-    @item = []
+    @items = []
   end
 
   def add_item(item)
-    @item << item unless @item.include?(item)
+    @items << item
     item.genre = self
   end
 end

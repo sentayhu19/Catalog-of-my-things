@@ -1,25 +1,32 @@
-require_relative 'spec_helper'
+require 'date'
+require_relative '../classes/book'
 
 describe Book do
-  describe '#new' do
-    it 'takes 0-2 arguments and returns a Book object' do
-      @book = Book.new
-      expect(@book).to be_an_instance_of Book
+  context 'When testing the Book class' do
+    it 'A newly created book has a title of type String' do
+      bk = Book.new('Harry Potter', 'JK Rowlings', 'good', '2018-05-12')
+      expect(bk.name).not_to be_nil
+      expect(bk.name).to be_a(String)
     end
-  end
 
-  describe '#can be archived?' do
-    it 'can_be_archived? private func from Book returns true if parent method returns true OR if cover state is bad' do
-      # ARRANGE
-      @good_new_book = Book.new('', 'good', publish_date: '01/01/2020')
-      @bad_new_book = Book.new('', 'bad', publish_date: '01/01/2020')
-      @good_old_book = Book.new('', 'good', publish_date: '01/01/2000')
-      @bad_old_book = Book.new('', 'bad', publish_date: '01/01/2000')
-      # ASSERT
-      expect(@good_new_book.move_to_archive).to be_nil
-      expect(@bad_new_book.move_to_archive).to be_truthy
-      expect(@good_old_book.move_to_archive).to be_truthy
-      expect(@bad_old_book.move_to_archive).to be_truthy
+    it 'should detect the book title' do
+      bk = Book.new('title', 'name', 'cover_state', '2018-05-12')
+      expect(bk.name).to eq 'title'
+    end
+
+    it 'should detect the book publisher' do
+      bk = Book.new('name', 'publisher', 'cover_state', '2018-05-12')
+      expect(bk.publisher).to eq 'publisher'
+    end
+
+    it 'should detect the book cover_state' do
+      bk = Book.new('name', 'author', 'cover_state', '2018-05-12')
+      expect(bk.cover_state).to eq 'cover_state'
+    end
+
+    it 'should detect the book publish_date' do
+      bk = Book.new('name', 'author', 'cover_state', '2018-05-12')
+      expect(bk.publish_date).to eq(Date.parse('2018-05-12'))
     end
   end
 end

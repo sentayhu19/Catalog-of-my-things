@@ -1,16 +1,18 @@
+require 'securerandom'
+
 class Label
   attr_accessor :title, :color
-  attr_reader :id, :items
+  attr_reader :items
 
-  def initialize(title, color = 'Unknown', items = [], id: Random.rand(1..1000))
+  def initialize(title, color)
+    @id = SecureRandom.uuid
     @title = title
     @color = color
-    @items = items
-    @id = id
+    @items = []
   end
 
   def add_item(item)
-    @items.push(item) unless @items.include?(item)
+    @items << item
     item.label = self
   end
 end
