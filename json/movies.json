@@ -23,5 +23,20 @@
     "name": "Man called a sin",
     "publish_date": "2022-01-20",
     "silent": true
+  },
+  {
+    "name": "star wars",
+    "publish_date": "2022-09-05",
+    "silent": true
+  },
+  {
+    "name": "Star wars",
+    "publish_date": "2020-01-01",
+    "silent": true
+  },
+  {
+    "name": "Superman",
+    "publish_date": "2020-01-01",
+    "silent": false
   }
 ]

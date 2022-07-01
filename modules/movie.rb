@@ -25,7 +25,6 @@ module MovieModule
       else
         JSON.parse(File.read(movie_storage))
       end
-      menu_list
     else
       movies
     end
@@ -35,10 +34,10 @@ module MovieModule
     print 'Enter the movie name: '
     name = gets.chomp
 
-    print 'Enter the Date published with Date format[yyyy-mm-dd]: '
+    print 'Enter the Date published with Date format(yyyy-mm-dd): '
     date_published = gets.chomp
 
-    print 'Please indicate if this is a Silent Movie(y/n): '
+    print 'Indicate if this is a Silent Movie(y/n): '
     silent = gets.chomp.downcase == 'y'
 
     new_movie = Movie.new(name, date_published, silent)
@@ -46,19 +45,23 @@ module MovieModule
     puts 'Movie created successfully'
     menu_list
   rescue StandardError
-    puts 'Cannot create movie, check your Input format'
+    puts 'Invaild imput'
   end
 
   def list_all_movies
     movies = load_movies
 
     if movies.empty?
-      puts 'No movies.'
+      puts 'No saved movies'
     else
-      puts "#{movies.count} Movies Found!"
       movies.each do |movie|
-        puts "Title: '#{movie['name']}, Published Date: #{movie['publish_date']}, Silent: #{movie['silent']}"
+        puts "
+        Title: '#{movie['name']}
+        Published Date: #{movie['publish_date']}
+        Silent: #{movie['silent']}"
+        puts ''
       end
+      menu_list
     end
   end
 end
