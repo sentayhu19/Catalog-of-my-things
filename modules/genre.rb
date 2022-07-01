@@ -1,4 +1,5 @@
 require 'json'
+require_relative 'menu.rb'
 
 module GenreModule
   def add_genre(genre)
@@ -38,6 +39,7 @@ module GenreModule
       genres.each do |genre|
         puts genre.name
       end
+      menu_list
     end
   end
 end
