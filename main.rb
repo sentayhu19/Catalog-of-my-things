@@ -1,4 +1,10 @@
-require_relative 'app'
+
+require './app'
+require './json/json_manipulation'
+
+@my_app = App.new
+@savejson = Manipulation.new
+
 
 def display_list
   puts "****************************\n*       MY CATALOGUE       *\n****************************\n\n\n"
@@ -17,29 +23,38 @@ def menu_one(option, app)
   end
 end
 
-def menu_two(option, app)
-  case option
-  when 12 then app.add_game
+def middle
+  puts 'Select (0) to goback to the menu or (13) to exit'
+  mid = gets.chomp.to_i
+  case mid
+  when 0
+    main
+  when 13
+    select_option(13)
+  else
+    p 'Invalid input'
+    main
   end
 end
 
-def main
-  app = App.new
-  option = ''
-  loop do
-    display_list
-    option = gets.chomp.to_i
-    if option.positive? && option < 7
-      menu_one(option, app)
-    elsif option >= 7 && option < 13
-      menu_two(option, app)
-    elsif option == 13
-      puts ' '
-      puts "\n\n\n********************\n*     Goodbye!     *\n********************\n"
-      exit(true)
-    else
-      puts "Invalid option, please try again\n--------------------\n\n\n"
-    end
+def select_option(option)
+  case option
+
+  when (3 || 8)..9
+    @my_app.redirection(option)
+    middle
+  when 10..12
+    puts 'On construction'
+    print "\e[2J\e[f"
+    main
+  when 13
+    puts 'Goodbye see you again'
+    @savejson.save_data(@my_app.movies, 'movies.json')
+    @savejson.save_data(@my_app.sources, 'sources.json')
+    exit(true)
+  else
+    puts 'Choose a correct option'
+    main
   end
  
 end
