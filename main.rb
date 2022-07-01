@@ -1,4 +1,3 @@
-
 require './app'
 require './json/json_manipulation'
 
@@ -10,8 +9,6 @@ def display_list
   puts "****************************\n*       MY CATALOGUE       *\n****************************\n\n\n"
   puts "Select an option:\n--------------------\n"
   puts "
-
-
     4. List of games
     12. Add a game
     13. Exit"
@@ -40,12 +37,11 @@ end
 def select_option(option)
   case option
 
-  when (3 || 8)..9
-    @my_app.redirection(option)
-    middle
-  when 10..12
     puts 'On construction'
     print "\e[2J\e[f"
+    main
+  when 10
+    @music.add_a_music
     main
   when 13
     puts 'Goodbye see you again'
