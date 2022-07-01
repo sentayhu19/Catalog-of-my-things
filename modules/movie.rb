@@ -1,5 +1,6 @@
 require 'json'
 require_relative '../classes/movie'
+require_relative 'menu.rb'
 
 module MovieModule
   def add_movie(movie)
@@ -24,11 +25,11 @@ module MovieModule
       else
         JSON.parse(File.read(movie_storage))
       end
+      menu_list
     else
       movies
     end
   end
-
   def create_movie
     print 'Enter the movie name: '
     name = gets.chomp
@@ -41,18 +42,19 @@ module MovieModule
 
     new_movie = Movie.new(name, date_published, silent)
     add_movie(new_movie)
-    puts 'Movie created successfully'.colorize(color: :light_green)
+    puts 'Movie created successfully'
+    menu_list
   rescue StandardError
-    puts 'Cannot create movie, check your Input format'.colorize(color: :light_red)
+    puts 'Cannot create movie, check your Input format'
   end
 
   def list_all_movies
     movies = load_movies
 
     if movies.empty?
-      puts 'Woops! There are currently no movies in the list.'.colorize(color: :magenta)
+      puts 'Woops! There are currently no movies in the list.'
     else
-      puts "#{movies.count} Movies Found!".colorize(color: :magenta)
+      puts "#{movies.count} Movies Found!"
       movies.each do |movie|
         puts "Title: '#{movie['name']}, Published Date: #{movie['publish_date']}, Silent: #{movie['silent']}"
       end
