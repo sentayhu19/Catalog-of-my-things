@@ -1,31 +1,23 @@
-require_relative 'spec_helper'
+require 'date'
+require_relative '../classes/label'
+require_relative '../classes/book'
 
 describe Label do
-  describe '#new' do
-    it 'takes 1-4 arguments and returns a Book object' do
-      # ARRANGE
-      @label1 = Label.new('Tom Sawyer')
-      @label2 = Label.new('Jim Peach', 'yellow')
-      @label3 = Label.new('For dummies', 'green', [@label1, @label2])
-      @label4 = Label.new('Pelicans', '#000', [402, 600], id: 500)
-      # ASSERT
-      expect(@label1).to be_an_instance_of Label
-      expect(@label2).to be_an_instance_of Label
-      expect(@label3).to be_an_instance_of Label
-      expect(@label4).to be_an_instance_of Label
-    end
-  end
+  context 'When testing the Label class' do
+    book = Book.new('The Universe', 'publisher', 'bad', '2022/3/14')
+    label = Label.new('Book-label', 'Yellow')
 
-  describe '#add' do
-    it 'add_item func takes an item and updates label\'s items and item\'s label' do
-      # ARRANGE
-      @item = Item.new('12/18/1998', false)
-      @label = Label.new('Comedy')
-      # ACT
-      @label.add_item(@item)
-      # ASSERT
-      expect(@label.items).to include(@item)
-      expect(@item.label).to be(@label)
+    it 'Should validate the label title' do
+      expect(label.title).to eq 'Book-label'
+    end
+
+    it 'Should validate the label title' do
+      expect(label.color).to eq 'Yellow'
+    end
+
+    it 'should add book item object to label items array' do
+      label.add_item(book)
+      expect(label.items[0]).to eq book
     end
   end
 end
