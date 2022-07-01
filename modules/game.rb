@@ -36,13 +36,13 @@ module GameModule
   def list_games
     games = fetch_games
     if games.empty?
-      puts 'No Games to be displayed'
+      puts 'No game available'
       menu_list
     else
       puts "#{games.count} Games Found!"
       games.each do |game|
-        puts "Players: #{game['multiplayer']}" \
-             "-Last Played: #{game['last_played_at']} - Published: #{game['publish_date']}"
+        puts "Players: #{game['multiplayer']} \n" 
+             "Last Played: #{game['last_played_at']} \nPublished: #{game['publish_date']} \n\n"
       end
       menu_list
     end

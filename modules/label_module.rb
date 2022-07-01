@@ -33,11 +33,11 @@ module LabelsDataController
     labels = load_labels
 
     if labels.empty?
-      puts 'No Lables to be displayed'
+      puts 'No Lables available'
     else
       puts "#{labels.count} Labels Found!"
       labels.each do |label|
-        puts "Title: #{label['title']} - Color: #{label['color']}"
+        puts "Title: #{label['title']} - Color: #{label['color']}\n"
       end
     end
   end

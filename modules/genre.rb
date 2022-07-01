@@ -32,11 +32,11 @@ module GenreModule
   def list_genres
     genres = fetch_genres
     if genres.empty?
-      puts 'No Genres to be displayed'
+      puts 'No Genres available'
     else
       print 'The genres are : '
       genres.each do |genre|
-        print genre.name
+        puts genre.name
       end
     end
   end

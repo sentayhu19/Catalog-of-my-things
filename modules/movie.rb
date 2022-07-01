@@ -52,7 +52,7 @@ module MovieModule
     movies = load_movies
 
     if movies.empty?
-      puts 'Woops! There are currently no movies in the list.'
+      puts 'No movies.'
     else
       puts "#{movies.count} Movies Found!"
       movies.each do |movie|
