@@ -1,5 +1,5 @@
 require_relative './app'
-require_relative './modules/menu.rb'
+require_relative './modules/menu'
 
 class Main
   def initialize

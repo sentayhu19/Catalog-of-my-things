@@ -1,6 +1,6 @@
 require 'json'
 require_relative '../classes/game'
-require_relative 'menu.rb'
+require_relative 'menu'
 
 module GameModule
   def add_game(game)
@@ -37,15 +37,17 @@ module GameModule
     games = fetch_games
     if games.empty?
       puts 'No game available'
-      menu_list
     else
       puts "#{games.count} Games Found!"
       games.each do |game|
-        puts "Players: #{game['multiplayer']} \n" 
-             "Last Played: #{game['last_played_at']} \nPublished: #{game['publish_date']} \n\n"
+        puts "Players: #{game['multiplayer']}
+              Last Played: #{game['last_played_at']}
+              Published: #{game['publish_date']}
+              "
+        puts ''
       end
-      menu_list
     end
+    menu_list
   end
 
   def create_game

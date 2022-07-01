@@ -1,6 +1,6 @@
 require 'json'
 require_relative '../classes/movie'
-require_relative 'menu.rb'
+require_relative 'menu'
 
 module MovieModule
   def add_movie(movie)
@@ -30,6 +30,7 @@ module MovieModule
       movies
     end
   end
+
   def create_movie
     print 'Enter the movie name: '
     name = gets.chomp
