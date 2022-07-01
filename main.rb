@@ -22,10 +22,10 @@ end
 def menu_one(option, app)
   case option
   when 1 then app.list_all_books
-  when 2 then app.list_all_music_albums
+  when 2 then app.list_musics
   when 3 then app.list_all_movies
   when 4 then app.list_all_games
-  when 5 then app.list_all_genres
+  when 5 then app.list_genres
   when 6 then app.list_all_labels
 
   end

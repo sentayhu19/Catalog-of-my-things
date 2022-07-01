@@ -1,8 +1,7 @@
 require 'date'
 
 class Item
-
-  def initialize(genre, author, source, label, publish_date)
+  def initialize(genre, author, source, label, _publish_date)
     @id = Random.rand(1..1000)
     @genre = genre
     genre.items.push(self) unless genre.items.include?(self)
@@ -10,7 +9,6 @@ class Item
     @source = source
     source.items << self unless source.items.include?(self)
     @label = label
-
   end
 
   def can_be_archived?
