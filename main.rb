@@ -21,7 +21,7 @@ Please choose an option by entering a number:
  11 - Add a movie
  12 - Add a game
  13 - Exit'
-    puts ' Please select an option from the list above: '
+    print ' option: '
   end
 
   def start

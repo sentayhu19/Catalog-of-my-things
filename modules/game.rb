@@ -1,5 +1,6 @@
 require 'json'
 require_relative '../classes/game'
+require_relative 'menu.rb'
 
 module GameModule
   def add_game(game)
@@ -36,12 +37,14 @@ module GameModule
     games = fetch_games
     if games.empty?
       puts 'No Games to be displayed'
+      menu_list
     else
       puts "#{games.count} Games Found!"
       games.each do |game|
         puts "Players: #{game['multiplayer']}" \
              "-Last Played: #{game['last_played_at']} - Published: #{game['publish_date']}"
       end
+      menu_list
     end
   end
 
@@ -58,6 +61,7 @@ module GameModule
     new_game = Game.new(multiplayer, last_played_at, publish_date)
     add_game(new_game)
     puts 'Game created successfully'
+    menu_list
   rescue StandardError
     puts 'Cannot create game, check your Input format'
   end

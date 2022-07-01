@@ -1,4 +1,5 @@
 require 'json'
+require_relative 'menu.rb'
 
 module SourceModule
   def add_source(source)
@@ -33,6 +34,7 @@ module SourceModule
 
     if sources.empty?
       puts 'Woops! There are currently no sources in the list.'
+      menu_list
     else
       puts "#{sources.count} Sources Found!"
       sources.each do |source|

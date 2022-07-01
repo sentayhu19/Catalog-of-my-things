@@ -41,6 +41,7 @@ module MusicAlbumsModule
         puts "Album's published date : #{album['publish_date']}"
         puts "The album is #{album['on_spotify'] ? '' : 'not'} on spotify"
       end
+      menu_list
     end
   end
 
@@ -59,5 +60,6 @@ module MusicAlbumsModule
     menu_list
   rescue StandardError
     puts 'Cannot add music album, check your Input format'
+    menu_list
   end
 end
