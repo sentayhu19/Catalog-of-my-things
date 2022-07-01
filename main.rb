@@ -22,22 +22,10 @@ end
 def main
   menu
   option = gets.chomp.to_i
-  select_option(option)
+  app = App.new
+  app.select_option(option)
 end
 
-def select_option(option)
-  case option
-  when 1..12
-    puts 'On construction'
-    print "\e[2J\e[f"
-    main
-  when 13
-    puts 'Goodbye see you again'
-    exit(true)
-  else
-    puts 'Choose a correct option'
-    main
-  end
-end
+
 
 main

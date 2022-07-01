@@ -1,14 +1,15 @@
-require 'date'
+
+require_relative '../module/date'
 class Item
   attr_accessor :genre, :author, :source, :label, :publish_date, :archived
 
-  def initialize(genre, author, source, label, publish_date)
-    @genre = genre
-    @author = author
-    @source = source
-    @label = label
-    @publish_date = from_string(publish_date)
-    @archived = false
+  def initialize(publish_date:, archived: false)
+    # @genre = genre
+    # @author = author
+    # @source = source
+    # @label = label
+    @publish_date = DateData.from_string(publish_date)
+    @archived = archived
   end
 
   def can_be_archived?
@@ -20,6 +21,4 @@ class Item
   end
 end
 
-def from_string(date)
-  Date.parse(date)
-end
+
