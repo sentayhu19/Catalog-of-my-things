@@ -3,11 +3,11 @@ class Source
   attr_reader :items
 
   def initialize(name, id = '')
-    unless id.class == Integer
-      @id = Random.rand(1..1000)
-    else
-      @id = id
-    end
+    @id = if id.instance_of?(Integer)
+            id
+          else
+            Random.rand(1..1000)
+          end
     @name = name
     @items = []
   end
