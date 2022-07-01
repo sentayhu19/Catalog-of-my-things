@@ -18,6 +18,10 @@ Catalogs of my things help you to keep a record of different types of things you
 - cd Catalog-of-my-things
 ```
 
+## VIDEO
+
+- Link to the group [video](https://drive.google.com/file/d/1t1lnXeiNjhjE1Qa2eWHWRLhIv7Z5xS6M/view?usp=sharing)
+
 ## Built with
 - Ruby
 - SQL
